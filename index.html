@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boids — 3D Flocking Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+    <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="hero">
+        <h1>BOIDS</h1>
+        <p class="subtitle">3D Flocking Simulation</p>
+
+        <div class="rules">
+            <div class="rule">
+                <div class="icon">&#x2194;</div>
+                <div class="name">Separation</div>
+                <div class="desc">Avoid crowding nearby flockmates</div>
+            </div>
+            <div class="rule">
+                <div class="icon">&#x2191;</div>
+                <div class="name">Alignment</div>
+                <div class="desc">Steer toward average heading</div>
+            </div>
+            <div class="rule">
+                <div class="icon">&#x2022;</div>
+                <div class="name">Cohesion</div>
+                <div class="desc">Move toward center of mass</div>
+            </div>
+        </div>
+
+        <a href="simulation.html" class="enter-btn">
+            Enter Simulation <span class="arrow">&rarr;</span>
+        </a>
+    </div>
+
+    <div class="credits">
+        Inspired by Craig Reynolds (1986) &middot;
+        <a href="https://github.com/Nik-code" target="_blank" rel="noopener">Nik</a>
+        &middot; MIT License
+    </div>
+</body>
+</html>

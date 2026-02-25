@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg, #08080f 0%, #141028 50%, #081520 100%
+    );
+    color: #d0d8e0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+}
+
+/* ---------- floating bg shapes ---------- */
+
+.bg-shapes {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:nth-child(1) {
+    width: 420px;
+    height: 420px;
+    top: -120px;
+    right: -100px;
+    background: radial-gradient(
+        circle, rgba(126, 202, 214, 0.06), transparent
+    );
+    animation: drift 26s infinite ease-in-out;
+}
+
+.shape:nth-child(2) {
+    width: 340px;
+    height: 340px;
+    bottom: -60px;
+    left: -90px;
+    background: radial-gradient(
+        circle, rgba(184, 164, 224, 0.06), transparent
+    );
+    animation: drift 32s infinite ease-in-out reverse;
+}
+
+.shape:nth-child(3) {
+    width: 220px;
+    height: 220px;
+    top: 38%;
+    left: 58%;
+    background: radial-gradient(
+        circle, rgba(232, 160, 181, 0.04), transparent
+    );
+    animation: drift 22s infinite ease-in-out 4s;
+}
+
+.shape:nth-child(4) {
+    width: 180px;
+    height: 180px;
+    top: 15%;
+    left: 12%;
+    background: radial-gradient(
+        circle, rgba(143, 213, 166, 0.04), transparent
+    );
+    animation: drift 28s infinite ease-in-out 8s;
+}
+
+@keyframes drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(35px, -45px) scale(1.06); }
+    50% { transform: translate(-25px, 25px) scale(0.94); }
+    75% { transform: translate(40px, 35px) scale(1.03); }
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+    text-align: center;
+    z-index: 1;
+    max-width: 560px;
+    padding: 0 28px;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    background: linear-gradient(
+        135deg, #7ecad6, #b8a4e0, #e8a0b5
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+}
+
+.hero .subtitle {
+    font-size: 1.05rem;
+    font-weight: 300;
+    letter-spacing: 0.16em;
+    color: #7888a0;
+    margin-bottom: 44px;
+}
+
+.hero .rules {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 52px;
+    flex-wrap: wrap;
+}
+
+.rule {
+    text-align: center;
+    max-width: 120px;
+}
+
+.rule .icon {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.rule .name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #8898a8;
+    margin-bottom: 2px;
+}
+
+.rule .desc {
+    font-size: 0.72rem;
+    color: #556070;
+    line-height: 1.5;
+}
+
+/* ---------- button ---------- */
+
+.enter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 52px;
+    border: 1px solid rgba(126, 202, 214, 0.25);
+    border-radius: 60px;
+    background: rgba(126, 202, 214, 0.07);
+    color: #7ecad6;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.enter-btn:hover {
+    background: rgba(126, 202, 214, 0.14);
+    border-color: rgba(126, 202, 214, 0.45);
+    box-shadow: 0 0 36px rgba(126, 202, 214, 0.18);
+    transform: translateY(-2px);
+}
+
+.enter-btn .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.enter-btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* ---------- credits ---------- */
+
+.credits {
+    position: fixed;
+    bottom: 24px;
+    font-size: 0.78rem;
+    color: #3a4a5a;
+    z-index: 1;
+    text-align: center;
+}
+
+.credits a {
+    color: #5a6a7a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.credits a:hover {
+    color: #7ecad6;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 480px) {
+    .hero .rules {
+        gap: 20px;
+    }
+    .enter-btn {
+        padding: 14px 40px;
+        font-size: 0.9rem;
+    }
+}
