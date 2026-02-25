@@ -21,7 +21,7 @@ export class Flock {
         this._up = new THREE.Vector3(0, 1, 0);
         this._dir = new THREE.Vector3();
 
-        const geometry = new THREE.ConeGeometry(1, 3, 4);
+        const geometry = new THREE.ConeGeometry(3.5, 10, 4);
         const material = new THREE.MeshStandardMaterial({
             roughness: 0.45,
             metalness: 0.25,

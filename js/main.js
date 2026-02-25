@@ -7,12 +7,12 @@ const BOUNDS = 200;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x08080f);
-scene.fog = new THREE.FogExp2(0x08080f, 0.0012);
+scene.fog = new THREE.FogExp2(0x08080f, 0.0008);
 
 const camera = new THREE.PerspectiveCamera(
     60, window.innerWidth / window.innerHeight, 1, 2000
 );
-camera.position.set(320, 220, 320);
+camera.position.set(260, 180, 260);
 camera.lookAt(0, 0, 0);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -51,7 +51,7 @@ starsGeo.setAttribute(
 );
 scene.add(new THREE.Points(
     starsGeo,
-    new THREE.PointsMaterial({ color: 0x445566, size: 0.8 })
+    new THREE.PointsMaterial({ color: 0x445566, size: 1.2 })
 ));
 
 const params = {
